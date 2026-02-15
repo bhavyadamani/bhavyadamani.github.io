@@ -1,0 +1,604 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Bhavya Damani | D365 CRM Functional Consultant</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#256af4",
+              "background-light": "#f5f6f8",
+              "background-dark": "#101622",
+            },
+            fontFamily: {
+              display: ["Inter", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .glass-card {
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        box-shadow: 0 4px 20px -2px rgba(37, 106, 244, 0.05);
+      }
+
+      .hero-pattern {
+        background-color: #f5f6f8;
+        background-image: radial-gradient(#256af4 0.5px, transparent 0.5px);
+        background-size: 24px 24px;
+        background-position: 0 0;
+        opacity: 0.4;
+      }
+    </style>
+  </head>
+
+  <body
+    class="font-display bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-100 transition-colors duration-300"
+  >
+    <!-- Navigation -->
+    <nav
+      class="sticky top-0 z-50 w-full bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800"
+    >
+      <div
+        class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between"
+      >
+        <div class="flex items-center gap-2">
+          <div
+            class="w-10 h-10 bg-primary rounded flex items-center justify-center text-white"
+          >
+            <span class="material-icons">architecture</span>
+          </div>
+          <span
+            class="text-xl font-extrabold tracking-tight text-slate-900 dark:text-white"
+            >Bhavya<span class="text-primary">Damani</span></span
+          >
+        </div>
+        <div class="hidden md:flex items-center gap-8">
+          <a
+            class="text-sm font-medium hover:text-primary transition-colors"
+            href="#about"
+            >About</a
+          >
+          <a
+            class="text-sm font-medium hover:text-primary transition-colors"
+            href="#experience"
+            >Experience</a
+          >
+          <a
+            class="text-sm font-medium hover:text-primary transition-colors"
+            href="#projects"
+            >Projects</a
+          >
+          <a
+            class="text-sm font-medium hover:text-primary transition-colors"
+            href="#contact"
+            >Contact</a
+          >
+        </div>
+        <div class="flex items-center gap-4">
+          <a
+            href="assets/resume.pdf"
+            download
+            class="hidden sm:flex items-center gap-2 px-5 py-2.5 bg-white dark:bg-slate-800 text-slate-900 dark:text-white font-semibold rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700 transition-all shadow-sm mr-2"
+          >
+            <span class="material-icons text-base">download</span> CV
+          </a>
+          <button
+            class="px-5 py-2.5 bg-primary text-white font-semibold rounded-lg hover:bg-blue-700 transition-all shadow-md shadow-primary/20"
+          >
+            Contact Now
+          </button>
+        </div>
+      </div>
+    </nav>
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden pt-16 pb-24 lg:pt-32 lg:pb-40">
+      <div class="absolute inset-0 hero-pattern pointer-events-none"></div>
+      <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <!-- Content -->
+          <div class="flex flex-col gap-8">
+            <div
+              class="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-bold uppercase tracking-wider"
+            >
+              <span class="relative flex h-2 w-2">
+                <span
+                  class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"
+                ></span>
+                <span
+                  class="relative inline-flex rounded-full h-2 w-2 bg-primary"
+                ></span>
+              </span>
+              Certified Microsoft Solutions Partner
+            </div>
+            <h1
+              class="text-5xl lg:text-7xl font-extrabold text-slate-900 dark:text-white leading-[1.1]"
+            >
+              Empowering Businesses with
+              <span class="text-primary">D365 & Power Platform</span>
+            </h1>
+            <p
+              class="text-xl text-slate-600 dark:text-slate-400 max-w-xl leading-relaxed"
+            >
+              Over 4.5 years of experience in Microsoft Dynamics project
+              implementations and presales, delivering value throughout the
+              entire project cycle. Expert in solution architecture,
+              functionality, and fit-gap analysis.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 pt-4">
+              <button
+                class="px-8 py-4 bg-primary text-white font-bold rounded-xl hover:bg-blue-700 transition-all text-lg shadow-lg shadow-primary/25"
+              >
+                View Projects
+              </button>
+              <button
+                class="px-8 py-4 bg-white dark:bg-slate-800 text-slate-900 dark:text-white font-bold rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700 transition-all text-lg"
+              >
+                Contact Me
+              </button>
+            </div>
+            <div class="pt-2">
+              <a
+                href="assets/resume.pdf"
+                download
+                class="inline-flex px-8 py-4 bg-transparent text-slate-600 dark:text-slate-400 font-bold rounded-xl border-2 border-dashed border-slate-300 dark:border-slate-700 hover:border-primary hover:text-primary transition-all text-lg items-center gap-2"
+              >
+                <span class="material-icons">download</span> Download CV
+              </a>
+            </div>
+            <div class="flex items-center gap-6 mt-4">
+              <div class="flex -space-x-3">
+                <div
+                  class="w-10 h-10 rounded-full border-2 border-white dark:border-slate-900 bg-slate-200"
+                >
+                  <img
+                    class="w-full h-full rounded-full object-cover"
+                    data-alt="Client testimonial profile avatar photo"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRoFoeya2xglX7DjvOyJp0LwkFambxo20COsc9nQJ0KNdztwI_lt-CY1o_gSIPCu-NLYWOJ8rf3Mm21LtpqRT1SALqlug1BhNQOwn34S9mSidHfipShJNI-IT3Cdg5jX0vrhMvhDnXI2_NkNYGpmR4fPhMyT5szG_a2Eu6kEUHX22nRcfoSUVL2nXGchtbAGgMCxfOVdZV1_MfBiD7nfyoysThHkxu8omo8hy9UFKn5J4S_eHQ6rpb9IFCfK2txWL4eJHPN627bDM"
+                  />
+                </div>
+                <div
+                  class="w-10 h-10 rounded-full border-2 border-white dark:border-slate-900 bg-slate-200"
+                >
+                  <img
+                    class="w-full h-full rounded-full object-cover"
+                    data-alt="Client testimonial profile avatar photo"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsWWNdkSF6dSNtHKGEcESpPeAX1wk7Q_rBQ-QLM70Fk38ozkn4rn8NXQ4lyfWVC3x5uftQG5TK8O9zZV6FOQvS68ntvy0cI6PSbMlVkxj_TQVnyeWufkQ8-vP6n0F8F8NKtxgqvWHoKkkn0c9e1xXUpK7b_ptjyKkJlZ2TBHv5n51EFvehf8N97nl9PJN040erVDlzOP8pkDZwUKdv1ovuSfYb9QJ7h9csL_-7cqSmNQHAs8PyAZ9idVQR5yvqtmda6jtGrCtPr_U"
+                  />
+                </div>
+                <div
+                  class="w-10 h-10 rounded-full border-2 border-white dark:border-slate-900 bg-slate-200"
+                >
+                  <img
+                    class="w-full h-full rounded-full object-cover"
+                    data-alt="Client testimonial profile avatar photo"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgqDzRFeaqNAfgDD2xmeYPRESOOHX6GRkTRXc8yxpPzFhtwTEUh-pG-C4IwvQrGv4M5rRE9WhXfqR6QoeMMWzp9Vb_5Wu7yvZYnXiVnsAwH7yh14HqWRVGGOontFp3rpaVek2aUsY4YV_yG93nH1dO97w2xApvE7xCXsq51EDC0wD_IzWS8_UvwlfeXdmmb5LBwCkHsMDzaMOqAbuP81h5Z-_NXpIBlOlKPSBnvVLWTMUD6S7P9yUWMYASyofL0bj3ZXoPAvQcwbI"
+                  />
+                </div>
+              </div>
+              <div class="text-sm">
+                <div class="font-bold text-slate-900 dark:text-white">
+                  50+ Enterprises Optimised
+                </div>
+                <div class="text-slate-500">Trusted by Global Leaders</div>
+              </div>
+            </div>
+          </div>
+          <!-- Visual -->
+          <div class="relative">
+            <div
+              class="absolute -top-12 -left-12 w-64 h-64 bg-primary/10 rounded-full blur-3xl"
+            ></div>
+            <div
+              class="absolute -bottom-12 -right-12 w-64 h-64 bg-primary/20 rounded-full blur-3xl"
+            ></div>
+            <div
+              class="relative rounded-2xl overflow-hidden shadow-2xl border-8 border-white dark:border-slate-800 bg-slate-100 aspect-[4/5] md:aspect-auto md:h-[600px]"
+            >
+              <img
+                class="w-full h-full object-cover object-top"
+                data-alt="Professional consultant portrait in modern office"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyr8OovYx018MzlKqNLKySxGCVTveVp9D4x2-eT7F_xmKn3E7c1CcDjpyf7EDuKJLgEoVvh6Eqm90pf3gX9Qz7VZ3VLgpA3z6vHg0YSGvbEWrImcW3tDfywS3vtbCYMYsQRawqpfCI8n6ZpBNTw-We10-gSQficllXftcPJY-8PCpn5eMtRhW7hUYHzPoZlA0bPZ-q30Adc1qvekaAxuYs_taiOIycGb90yjW0wAqfio_mZByHcWr49-yZCc1gnxoKqqSp3Fd0Wg4"
+              />
+              <!-- Floating Achievement Card -->
+              <div
+                class="absolute bottom-6 right-6 p-6 glass-card rounded-xl max-w-[240px]"
+              >
+                <div class="flex items-center gap-3 mb-2">
+                  <div
+                    class="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center text-primary"
+                  >
+                    <span class="material-icons">insights</span>
+                  </div>
+                  <span
+                    class="text-xs font-bold uppercase tracking-tighter text-slate-500"
+                    >Efficiency Gain</span
+                  >
+                </div>
+                <div class="text-2xl font-extrabold text-slate-900">
+                  45% YoY Growth
+                </div>
+                <div class="text-sm text-slate-600">Average client results</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-white dark:bg-background-dark/50">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2
+            class="text-primary font-bold uppercase tracking-[0.2em] text-sm mb-4"
+          >
+            My Expertise
+          </h2>
+          <h3
+            class="text-4xl font-extrabold text-slate-900 dark:text-white mb-6"
+          >
+            End-to-End Microsoft Solutions
+          </h3>
+          <p
+            class="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto"
+          >
+            Bridging business strategy and Microsoft technology to deliver
+            scalable, secure, and efficient solutions.
+          </p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Card 1 -->
+          <div
+            class="group p-8 rounded-2xl bg-slate-50 dark:bg-slate-800/40 border border-slate-100 dark:border-slate-800 hover:border-primary/30 hover:shadow-xl transition-all duration-300"
+          >
+            <div
+              class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors"
+            >
+              <span class="material-icons text-3xl">settings_suggest</span>
+            </div>
+            <h4 class="text-xl font-bold text-slate-900 dark:text-white mb-4">
+              D365 & Power Platform
+            </h4>
+            <p class="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
+              Expert implementation of D365 Sales, Customer Service, Marketing,
+              Field Service, and Power Platform (Power Pages, Power Automate).
+            </p>
+          </div>
+          <!-- Card 2 -->
+          <div
+            class="group p-8 rounded-2xl bg-white dark:bg-slate-800 border-2 border-primary/20 shadow-xl shadow-primary/5 transition-all duration-300 scale-105 z-10"
+          >
+            <div
+              class="w-14 h-14 bg-primary rounded-xl flex items-center justify-center text-white mb-6"
+            >
+              <span class="material-icons text-3xl">architecture</span>
+            </div>
+            <h4 class="text-xl font-bold text-slate-900 dark:text-white mb-4">
+              Solution Architecture
+            </h4>
+            <p class="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
+              In-depth fit-gap analysis, security design, integration planning
+              (Dual Write, Azure), and scalable solution architecting.
+            </p>
+          </div>
+          <!-- Card 3 -->
+          <div
+            class="group p-8 rounded-2xl bg-slate-50 dark:bg-slate-800/40 border border-slate-100 dark:border-slate-800 hover:border-primary/30 hover:shadow-xl transition-all duration-300"
+          >
+            <div
+              class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors"
+            >
+              <span class="material-icons text-3xl">psychology</span>
+            </div>
+            <h4 class="text-xl font-bold text-slate-900 dark:text-white mb-4">
+              Pre-Sales & Strategy
+            </h4>
+            <p class="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
+              Driving project success from day one with RFP responses, POCs,
+              detailed SOWs, and user training/adoption strategies.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section
+      id="experience"
+      class="py-24 bg-background-light dark:bg-background-dark/30"
+    >
+      <div class="max-w-7xl mx-auto px-6">
+        <div
+          class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6"
+        >
+          <div>
+            <h2
+              class="text-primary font-bold uppercase tracking-[0.2em] text-sm mb-4"
+            >
+              Work History
+            </h2>
+            <h3
+              class="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white"
+            >
+              Professional Experience
+            </h3>
+          </div>
+        </div>
+
+        <div class="space-y-8">
+          <!-- Role 1 -->
+          <div
+            class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 flex flex-col md:flex-row gap-6"
+          >
+            <div class="flex-shrink-0">
+              <div
+                class="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center text-primary text-2xl font-bold"
+              >
+                DS
+              </div>
+            </div>
+            <div class="flex-grow">
+              <div class="flex flex-col md:flex-row justify-between mb-2">
+                <h4 class="text-xl font-bold text-slate-900 dark:text-white">
+                  Project Lead - D365 CRM
+                </h4>
+                <span class="text-slate-500 font-medium"
+                  >Nov 2021 – Present</span
+                >
+              </div>
+              <div class="text-primary font-semibold mb-4">
+                DynaTech Systems
+              </div>
+              <ul
+                class="space-y-2 text-slate-600 dark:text-slate-400 list-disc list-inside"
+              >
+                <li>
+                  Leading cross-functional teams (BAs, QAs, Developers) to
+                  deliver end-to-end projects.
+                </li>
+                <li>
+                  Architecting solutions, managing project timelines, scope, and
+                  quality.
+                </li>
+                <li>
+                  Lead for Business Apps/Add-ons concept design for Microsoft
+                  AppSource.
+                </li>
+                <li>
+                  Involved in Pre-Sales: Demos, SOWs, RFP responses, and
+                  Resource Allocation.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Role 2 -->
+          <div
+            class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 flex flex-col md:flex-row gap-6"
+          >
+            <div class="flex-shrink-0">
+              <div
+                class="w-16 h-16 bg-purple-100 dark:bg-purple-900/30 rounded-xl flex items-center justify-center text-purple-600 text-2xl font-bold"
+              >
+                C
+              </div>
+            </div>
+            <div class="flex-grow">
+              <div class="flex flex-col md:flex-row justify-between mb-2">
+                <h4 class="text-xl font-bold text-slate-900 dark:text-white">
+                  Senior Marketing Executive
+                </h4>
+                <span class="text-slate-500 font-medium"
+                  >Aug 2020 – Oct 2021</span
+                >
+              </div>
+              <div class="text-purple-600 font-semibold mb-4">
+                Croma – A TATA Enterprise
+              </div>
+              <ul
+                class="space-y-2 text-slate-600 dark:text-slate-400 list-disc list-inside"
+              >
+                <li>
+                  Managed Marketing activities (ATL+BTL) for 38 stores in
+                  Gujarat.
+                </li>
+                <li>
+                  Analyzed data to frame marketing campaigns and increase
+                  footfall.
+                </li>
+                <li>
+                  Executed Digital Marketing activities (Social Media, Google
+                  Ads).
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-24 bg-white dark:bg-background-dark/50">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2
+            class="text-primary font-bold uppercase tracking-[0.2em] text-sm mb-4"
+          >
+            Case Studies
+          </h2>
+          <h3
+            class="text-4xl font-extrabold text-slate-900 dark:text-white mb-6"
+          >
+            Key Projects
+          </h3>
+        </div>
+        <div class="grid md:grid-cols-2 gap-8">
+          <!-- Project 1 -->
+          <div
+            class="group rounded-2xl overflow-hidden bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-700 hover:shadow-xl transition-all"
+          >
+            <div class="p-8">
+              <div class="flex justify-between items-start mb-6">
+                <span
+                  class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-300 rounded-full text-xs font-bold uppercase"
+                  >NGO Transformation</span
+                >
+              </div>
+              <h4
+                class="text-2xl font-bold text-slate-900 dark:text-white mb-3"
+              >
+                Digital Transformation for 100k+ Member NGO
+              </h4>
+              <p class="text-slate-600 dark:text-slate-400 mb-6">
+                Transformed legacy on-prem software to D365 CRM, Power Pages,
+                and D365 FO. Led integration via Dual Write and managed a
+                30-member team.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span
+                  class="text-xs font-semibold px-2 py-1 bg-slate-200 dark:bg-slate-700 rounded text-slate-700 dark:text-slate-300"
+                  >D365 CRM</span
+                >
+                <span
+                  class="text-xs font-semibold px-2 py-1 bg-slate-200 dark:bg-slate-700 rounded text-slate-700 dark:text-slate-300"
+                  >Power Pages</span
+                >
+                <span
+                  class="text-xs font-semibold px-2 py-1 bg-slate-200 dark:bg-slate-700 rounded text-slate-700 dark:text-slate-300"
+                  >Azure</span
+                >
+              </div>
+            </div>
+          </div>
+          <!-- Project 2 -->
+          <div
+            class="group rounded-2xl overflow-hidden bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-700 hover:shadow-xl transition-all"
+          >
+            <div class="p-8">
+              <div class="flex justify-between items-start mb-6">
+                <span
+                  class="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-300 rounded-full text-xs font-bold uppercase"
+                  >Finance</span
+                >
+              </div>
+              <h4
+                class="text-2xl font-bold text-slate-900 dark:text-white mb-3"
+              >
+                D365 Omni-channel Implementation
+              </h4>
+              <p class="text-slate-600 dark:text-slate-400 mb-6">
+                Roadmap design and implementation of D365 Omni-channel, Power
+                Pages, Power BI, and Twilio integration. Digitized 55 manual
+                workflows.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span
+                  class="text-xs font-semibold px-2 py-1 bg-slate-200 dark:bg-slate-700 rounded text-slate-700 dark:text-slate-300"
+                  >Omni-channel</span
+                >
+                <span
+                  class="text-xs font-semibold px-2 py-1 bg-slate-200 dark:bg-slate-700 rounded text-slate-700 dark:text-slate-300"
+                  >Power BI</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Footer CTA -->
+    <section id="contact" class="py-24 bg-primary relative overflow-hidden">
+      <div
+        class="absolute inset-0 bg-[linear-gradient(45deg,rgba(255,255,255,0.1)_25%,transparent_25%,transparent_50%,rgba(255,255,255,0.1)_50%,rgba(255,255,255,0.1)_75%,transparent_75%,transparent)] bg-[length:60px_60px]"
+      ></div>
+      <div class="max-w-7xl mx-auto px-6 relative z-10 text-center">
+        <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-8">
+          Ready to Transform Your Business?
+        </h2>
+        <p class="text-xl text-blue-100 mb-12 max-w-2xl mx-auto">
+          Let's discuss how D365 & Power Platform can optimize your operations
+          and drive growth.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <a
+            href="mailto:bhavyadamani@hotmail.com"
+            class="px-10 py-5 bg-white text-primary font-extrabold rounded-xl hover:bg-slate-50 transition-all text-xl shadow-2xl"
+          >
+            Email Me
+          </a>
+          <a
+            href="tel:+918866729853"
+            class="px-10 py-5 bg-transparent border-2 border-white text-white font-extrabold rounded-xl hover:bg-white/10 transition-all text-xl"
+          >
+            Call Now
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Basic Footer -->
+    <footer
+      class="py-12 bg-white dark:bg-background-dark border-t border-slate-200 dark:border-slate-800"
+    >
+      <div
+        class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8"
+      >
+        <div class="flex items-center gap-2">
+          <div
+            class="w-8 h-8 bg-primary rounded flex items-center justify-center text-white"
+          >
+            <span class="material-icons text-sm">architecture</span>
+          </div>
+          <span class="text-lg font-extrabold text-slate-900 dark:text-white"
+            >Bhavya<span class="text-primary">Damani</span></span
+          >
+        </div>
+        <p class="text-slate-500 text-sm">
+          © <span id="year">2024</span> Bhavya Damani. All rights reserved.
+          Microsoft and Power Platform are trademarks of Microsoft Corp.
+        </p>
+        <div class="flex gap-6">
+          <!-- Placeholder for LinkedIn if not provided, just sticking to email/phone as per request but icon can stay -->
+          <a
+            class="text-slate-400 hover:text-primary"
+            href="mailto:bhavyadamani@hotmail.com"
+            ><span class="material-icons">alternate_email</span></a
+          >
+          <a class="text-slate-400 hover:text-primary" href="tel:+918866729853"
+            ><span class="material-icons">call</span></a
+          >
+        </div>
+      </div>
+    </footer>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
