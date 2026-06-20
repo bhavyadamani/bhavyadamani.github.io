@@ -137,48 +137,29 @@
       <div
         class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between"
       >
+        <!-- Logo -->
         <div class="flex items-center gap-2">
           <a href="index.html" class="flex items-center gap-2">
-            <div
-              class="w-10 h-10 bg-primary rounded flex items-center justify-center text-white"
-            >
+            <div class="w-10 h-10 bg-primary rounded flex items-center justify-center text-white">
               <span class="material-icons">architecture</span>
             </div>
-            <span
-              class="text-xl font-extrabold tracking-tight text-slate-900 dark:text-white"
-              >Bhavya<span class="text-primary">Damani</span></span
-            >
+            <span class="text-xl font-extrabold tracking-tight text-slate-900 dark:text-white"
+              >Bhavya<span class="text-primary">Damani</span></span>
           </a>
         </div>
+
+        <!-- Desktop Nav Links -->
         <div class="hidden md:flex items-center gap-8">
-          <a
-            class="text-sm font-medium hover:text-primary transition-colors text-slate-600 dark:text-slate-300"
-            href="index.html#about"
-            >About</a
-          >
-          <a
-            class="text-sm font-medium hover:text-primary transition-colors text-slate-600 dark:text-slate-300"
-            href="index.html#experience"
-            >Experience</a
-          >
-          <a
-            class="text-sm font-medium hover:text-primary transition-colors text-slate-600 dark:text-slate-300"
-            href="index.html#projects"
-            >Projects</a
-          >
-          <a
-            class="text-sm font-medium hover:text-primary transition-colors text-slate-600 dark:text-slate-300"
-            href="index.html#contact"
-            >Contact</a
-          >
-          <a
-            class="text-sm font-bold text-primary border-b-2 border-primary pb-1"
-            href="blog.html"
-            >Blog</a
-          >
+          <a class="text-sm font-medium hover:text-primary transition-colors text-slate-600 dark:text-slate-300" href="index.html#about">About</a>
+          <a class="text-sm font-medium hover:text-primary transition-colors text-slate-600 dark:text-slate-300" href="index.html#experience">Experience</a>
+          <a class="text-sm font-medium hover:text-primary transition-colors text-slate-600 dark:text-slate-300" href="index.html#projects">Projects</a>
+          <a class="text-sm font-medium hover:text-primary transition-colors text-slate-600 dark:text-slate-300" href="index.html#contact">Contact</a>
+          <a class="text-sm font-bold text-primary border-b-2 border-primary pb-1" href="blog.html">Blog</a>
         </div>
-        <div class="flex items-center gap-4">
-          <!-- Dark Mode Toggle Button -->
+
+        <!-- Right Side: Theme toggle + Contact + Hamburger -->
+        <div class="flex items-center gap-3">
+          <!-- Dark Mode Toggle -->
           <button
             id="theme-toggle"
             class="p-2 rounded-lg text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
@@ -186,13 +167,43 @@
           >
             <span id="theme-toggle-icon" class="material-icons">dark_mode</span>
           </button>
-          
+
+          <!-- Desktop CTA -->
           <a
             href="index.html#contact"
             class="hidden md:inline-flex px-5 py-2.5 bg-primary text-white font-semibold rounded-lg hover:bg-blue-700 transition-all shadow-md shadow-primary/20"
           >
             Contact Now
           </a>
+
+          <!-- Hamburger Button (mobile only) -->
+          <button
+            id="mobile-menu-btn"
+            class="md:hidden p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+            aria-label="Open menu"
+            aria-expanded="false"
+          >
+            <span id="hamburger-icon" class="material-icons text-2xl">menu</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Slide-Down Menu -->
+      <div
+        id="mobile-menu"
+        class="md:hidden overflow-hidden max-h-0 transition-all duration-300 ease-in-out bg-white dark:bg-background-dark border-t border-slate-100 dark:border-slate-800"
+      >
+        <div class="px-6 py-4 flex flex-col gap-1">
+          <a href="index.html#about"      class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-slate-700 dark:text-slate-300 font-medium hover:bg-primary/10 hover:text-primary transition-colors"><span class="material-icons text-lg">person</span>About</a>
+          <a href="index.html#experience" class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-slate-700 dark:text-slate-300 font-medium hover:bg-primary/10 hover:text-primary transition-colors"><span class="material-icons text-lg">work</span>Experience</a>
+          <a href="index.html#projects"   class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-slate-700 dark:text-slate-300 font-medium hover:bg-primary/10 hover:text-primary transition-colors"><span class="material-icons text-lg">folder_special</span>Projects</a>
+          <a href="index.html#contact"    class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-slate-700 dark:text-slate-300 font-medium hover:bg-primary/10 hover:text-primary transition-colors"><span class="material-icons text-lg">mail</span>Contact</a>
+          <a href="blog.html"             class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-primary font-bold hover:bg-primary/10 transition-colors"><span class="material-icons text-lg">article</span>Blog</a>
+          <div class="pt-3 pb-1">
+            <a href="index.html#contact" class="flex items-center justify-center gap-2 w-full py-3 bg-primary text-white font-bold rounded-xl hover:bg-blue-700 transition-all shadow-md shadow-primary/20">
+              <span class="material-icons text-lg">send</span>Contact Now
+            </a>
+          </div>
         </div>
       </div>
     </nav>
@@ -394,6 +405,34 @@
           localStorage.setItem("color-theme", "dark");
         }
         updateThemeToggleButton();
+      });
+
+      // Mobile Hamburger Menu Logic
+      const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const hamburgerIcon = document.getElementById("hamburger-icon");
+      let menuOpen = false;
+
+      function openMobileMenu() {
+        menuOpen = true;
+        mobileMenu.style.maxHeight = mobileMenu.scrollHeight + "px";
+        hamburgerIcon.textContent = "close";
+        mobileMenuBtn.setAttribute("aria-expanded", "true");
+      }
+
+      function closeMobileMenu() {
+        menuOpen = false;
+        mobileMenu.style.maxHeight = "0";
+        hamburgerIcon.textContent = "menu";
+        mobileMenuBtn.setAttribute("aria-expanded", "false");
+      }
+
+      mobileMenuBtn.addEventListener("click", function () {
+        menuOpen ? closeMobileMenu() : openMobileMenu();
+      });
+
+      document.querySelectorAll(".mobile-nav-link").forEach(function (link) {
+        link.addEventListener("click", closeMobileMenu);
       });
 
       // Blog Application Data & Logic
