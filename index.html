@@ -75,6 +75,18 @@
   <body
     class="font-display bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-100 transition-colors duration-300"
   >
+    <!-- Dark Mode Init -->
+    <script>
+      if (
+        localStorage.getItem("color-theme") === "dark" ||
+        (!("color-theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
     <!-- Navigation -->
     <nav
       class="sticky top-0 z-50 w-full bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800"
@@ -114,8 +126,22 @@
             href="#contact"
             >Contact</a
           >
+          <a
+            class="text-sm font-medium hover:text-primary transition-colors"
+            href="blog.html"
+            >Blog</a
+          >
         </div>
         <div class="flex items-center gap-4">
+          <!-- Dark Mode Toggle Button -->
+          <button
+            id="theme-toggle"
+            class="p-2 rounded-lg text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+            aria-label="Toggle dark mode"
+          >
+            <span id="theme-toggle-icon" class="material-icons">dark_mode</span>
+          </button>
+
           <a
             href="#contact"
             class="hidden md:inline-flex px-5 py-2.5 bg-primary text-white font-semibold rounded-lg hover:bg-blue-700 transition-all shadow-md shadow-primary/20"
@@ -930,6 +956,31 @@
     </footer>
     <script>
       document.getElementById("year").textContent = new Date().getFullYear();
+
+      // Dark Mode Toggle Logic
+      const themeToggleBtn = document.getElementById("theme-toggle");
+      const themeToggleIcon = document.getElementById("theme-toggle-icon");
+
+      function updateThemeToggleButton() {
+        if (document.documentElement.classList.contains("dark")) {
+          themeToggleIcon.textContent = "light_mode";
+        } else {
+          themeToggleIcon.textContent = "dark_mode";
+        }
+      }
+      
+      updateThemeToggleButton();
+
+      themeToggleBtn.addEventListener("click", function () {
+        if (document.documentElement.classList.contains("dark")) {
+          document.documentElement.classList.remove("dark");
+          localStorage.setItem("color-theme", "light");
+        } else {
+          document.documentElement.classList.add("dark");
+          localStorage.setItem("color-theme", "dark");
+        }
+        updateThemeToggleButton();
+      });
     </script>
   </body>
 </html>
