@@ -69,6 +69,15 @@
         background-position: 0 0;
         opacity: 0.4;
       }
+
+      #mobile-menu {
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+      }
+
+      #mobile-menu::-webkit-scrollbar {
+        display: none;
+      }
     </style>
   </head>
 
@@ -150,7 +159,7 @@
       <!-- Mobile Slide-Down Menu -->
       <div
         id="mobile-menu"
-        class="md:hidden overflow-hidden max-h-0 transition-all duration-300 ease-in-out bg-white dark:bg-background-dark border-t border-slate-100 dark:border-slate-800"
+        class="md:hidden overflow-hidden max-h-0 transform -translate-y-3 opacity-0 pointer-events-none transition-transform transition-opacity duration-300 ease-in-out bg-white dark:bg-background-dark border-t border-slate-100 dark:border-slate-800"
       >
         <div class="px-6 py-4 flex flex-col gap-1">
           <a href="#about"      class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-slate-700 dark:text-slate-300 font-medium hover:bg-primary/10 hover:text-primary transition-colors"><span class="material-icons text-lg">person</span>About</a>
@@ -947,15 +956,23 @@
       function openMobileMenu() {
         menuOpen = true;
         mobileMenu.style.maxHeight = mobileMenu.scrollHeight + "px";
+        mobileMenu.classList.remove("-translate-y-3", "opacity-0", "pointer-events-none");
+        mobileMenu.classList.add("translate-y-0", "opacity-100");
         hamburgerIcon.textContent = "close";
         mobileMenuBtn.setAttribute("aria-expanded", "true");
       }
 
       function closeMobileMenu() {
         menuOpen = false;
-        mobileMenu.style.maxHeight = "0";
+        mobileMenu.classList.remove("translate-y-0", "opacity-100");
+        mobileMenu.classList.add("-translate-y-3", "opacity-0", "pointer-events-none");
         hamburgerIcon.textContent = "menu";
         mobileMenuBtn.setAttribute("aria-expanded", "false");
+        setTimeout(function () {
+          if (!menuOpen) {
+            mobileMenu.style.maxHeight = "0";
+          }
+        }, 300);
       }
 
       mobileMenuBtn.addEventListener("click", function () {
