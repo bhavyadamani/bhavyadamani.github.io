@@ -6,7 +6,7 @@
     "category": "Dataverse",
     "description": "A practical approach to move Dynamics 365 Contact Center recordings out of Dataverse File capacity and into Azure Blob Storage while keeping the user experience intact.",
     "readTime": "7 min read",
-    "image": "https://raw.githubusercontent.com/bhavyadamani/bhavyadamani.github.io/main/assets/architecture-diagram-dataverse-blob-storage.png",
+    "image": "https://raw.githubusercontent.com/bhavyadamani/bhavyadamani.github.io/main/assets/architecture-diagram-dataverse-blob-storage.png?v=20260902",
     "tags": ["dataverse", "azure blob storage", "dynamics 365 contact center", "power automate", "storage optimization"]
   },
   {
