@@ -57,4 +57,4 @@ For one customer, this solution delivered approximately a 60% reduction in Datav
 
 The effort to build the offloading mechanism — writing the flows, testing them thoroughly, setting up the storage account, service principal, and client secret — is a one-time investment. The savings repeat every month for years.
 
-The effort to build the offloading mechanism — writing the flows, testing them thoroughly, setting up the storage account, service principal, and client secret — is a one-time investment. The savings repeat every month for years.
+- Hope it helps. You can reach out to me at bhavyadamani@hotmail.com in case you would need to talk in detail.
