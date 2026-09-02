@@ -457,6 +457,7 @@
         const params = new URLSearchParams(window.location.search);
         const postSlug = params.get("post");
         const repoBase = "https://raw.githubusercontent.com/bhavyadamani/bhavyadamani.github.io/main";
+        const cacheBust = "?v=20260902";
 
         // Hide all sections initially
         blogListSection.classList.add("hidden");
@@ -464,8 +465,8 @@
         errorSection.classList.add("hidden");
 
         try {
-          // Fetch Blog Index
-          const response = await fetch(`${repoBase}/posts/posts.json`);
+          // Fetch Blog Index with a cache-busting query string to avoid stale browser data.
+          const response = await fetch(`${repoBase}/posts/posts.json${cacheBust}`, { cache: "no-store" });
           if (!response.ok) {
             throw new Error("Could not load posts.json index database.");
           }
@@ -580,8 +581,9 @@
           throw new Error(`The blog article "${slug}" could not be found in our database index.`);
         }
 
-        // Fetch Markdown content from the GitHub source to avoid GitHub Pages markdown serving issues
-        const markdownResponse = await fetch(`https://raw.githubusercontent.com/bhavyadamani/bhavyadamani.github.io/main/posts/${slug}.md`);
+        // Fetch Markdown content from the GitHub source to avoid GitHub Pages markdown serving issues.
+        // Use a cache-busting version to prevent stale browser responses.
+        const markdownResponse = await fetch(`https://raw.githubusercontent.com/bhavyadamani/bhavyadamani.github.io/main/posts/${slug}.md?v=20260902`, { cache: "no-store" });
         if (!markdownResponse.ok) {
           throw new Error(`Could not find the article text content file (posts/${slug}.md).`);
         }
