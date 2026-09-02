@@ -1,12 +1,3 @@
----
-layout: post
-title: "Solution to Reduce Dataverse Storage Cost by Offloading Recordings to Azure Blob Storage"
-date: 2026-09-02
-categories: [Dataverse]
-tags: [dataverse, azure blob storage, dynamics 365 contact center, power automate, storage optimization]
-author: Bhavya Damani
----
-
 # Solution to Reduce Dataverse Storage Cost by Offloading Recordings to Azure Blob Storage
 
 Across the Dataverse Storage Assessments I have delivered so far, one universal challenge has been the same: storage keeps growing while the Power Platform and Dynamics admin teams are not always clear about what can be safely deleted, archived, or moved out of Dataverse to bring the File Capacity back under control.
@@ -66,18 +57,4 @@ For one customer, this solution delivered approximately a 60% reduction in Datav
 
 The effort to build the offloading mechanism — writing the flows, testing them thoroughly, setting up the storage account, service principal, and client secret — is a one-time investment. The savings repeat every month for years.
 
-## Why this matters
-
-This pattern is especially relevant in customer service and contact center scenarios, where retention periods are long and recordings are expensive to hold in Dataverse. The problem is not just technical; it is commercial. Organisations must balance compliance and audit needs with storage economics. This approach helps strike that balance without compromising business continuity or user experience.
-
-## Final thought
-
-If you are dealing with Dataverse storage growth and you already know the main cost driver is recordings, this approach is worth evaluating. It does not require ripping out the recording model or losing historical context. Instead, it removes the expensive file payload while keeping the record and reporting metadata intact.
-
-That is why I consider this a very practical and sustainable optimization pattern for organisations that need to retain voice recordings for business and compliance reasons without paying premium Dataverse File pricing for the same data.
-
-Hope it helps. I am reachable at [bhavyadamani@hotmail.com](mailto:bhavyadamani@hotmail.com) if you would like to discuss this in detail.
-
----
-
-*Posted on bhavyadamani.github.io*
+The effort to build the offloading mechanism — writing the flows, testing them thoroughly, setting up the storage account, service principal, and client secret — is a one-time investment. The savings repeat every month for years.
