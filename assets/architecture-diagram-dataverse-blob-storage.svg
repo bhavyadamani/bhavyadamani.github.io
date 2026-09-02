@@ -1,0 +1,124 @@
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="1000" fill="#F6F8FB"/>
+  <text x="800" y="52" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="38" font-weight="700" fill="#1F2937">Offloading Dynamics 365 Contact Center Recordings to Azure Blob Storage</text>
+  <text x="800" y="92" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#58657A">Technical Solution Design | Dataverse file storage optimisation</text>
+
+  <line x1="260" y1="150" x2="1340" y2="150" stroke="#2F5D9A" stroke-width="3"/>
+
+  <rect x="40" y="170" width="430" height="670" rx="12" fill="#F7FAFF" stroke="#1E88E5" stroke-width="3"/>
+  <rect x="585" y="170" width="430" height="670" rx="12" fill="#F7FAFF" stroke="#1E88E5" stroke-width="3"/>
+  <rect x="1130" y="170" width="430" height="670" rx="12" fill="#F7FAFF" stroke="#1E88E5" stroke-width="3"/>
+
+  <g>
+    <circle cx="105" cy="250" r="52" fill="#19A97E"/>
+    <circle cx="105" cy="250" r="42" fill="#0A8E68" opacity="0.6"/>
+    <path d="M85 246L97 258L122 232" stroke="#F8FAFC" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="70" y="300" width="105" height="70" rx="12" fill="#EEF7FF" stroke="#1E88E5" stroke-width="2"/>
+    <text x="123" y="344" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700" fill="#1F2937">D365</text>
+  </g>
+
+  <text x="260" y="260" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="700" fill="#1F2937">CONTACT CENTER / DATAVERSE</text>
+
+  <rect x="110" y="390" width="250" height="120" rx="12" fill="#F8FBFF" stroke="#1E88E5" stroke-width="2"/>
+  <text x="235" y="435" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" font-weight="600" fill="#1F2937">Conversation</text>
+  <text x="235" y="470" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#4B5563">msdyn_liveworkitem</text>
+
+  <rect x="110" y="560" width="250" height="120" rx="12" fill="#F8FBFF" stroke="#1E88E5" stroke-width="2"/>
+  <text x="235" y="605" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" font-weight="600" fill="#1F2937">Recording</text>
+  <text x="235" y="640" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#4B5563">msdyn_ocrecording</text>
+
+  <rect x="110" y="710" width="250" height="80" rx="12" fill="#F8FBFF" stroke="#1E88E5" stroke-width="2" stroke-dasharray="8 8"/>
+  <text x="235" y="760" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#4B5563">Blob SAS URI</text>
+
+  <rect x="110" y="820" width="250" height="110" rx="12" fill="#F8FBFF" stroke="#A855F7" stroke-width="2"/>
+  <text x="235" y="870" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" font-weight="600" fill="#4C1D95">PCF Audio Player</text>
+  <text x="235" y="905" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#4B5563">Plays audio from a URL</text>
+
+  <path d="M360 450H520" stroke="#1E88E5" stroke-width="3"/>
+  <path d="M520 450L510 440M520 450L510 460" stroke="#1E88E5" stroke-width="3"/>
+  <path d="M360 620H520" stroke="#1E88E5" stroke-width="3"/>
+  <path d="M520 620L510 610M520 620L510 630" stroke="#1E88E5" stroke-width="3"/>
+
+  <rect x="620" y="218" width="360" height="610" rx="12" fill="#F8FBFF" stroke="#1E88E5" stroke-width="3"/>
+  <text x="800" y="282" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="700" fill="#1F2937">POWER AUTOMATE</text>
+
+  <rect x="650" y="320" width="300" height="48" rx="10" fill="#E6F2FF" stroke="#1E88E5" stroke-width="2"/>
+  <text x="800" y="352" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700" fill="#1F2937">Parent flow</text>
+
+  <line x1="800" y1="375" x2="800" y2="420" stroke="#7C8798" stroke-width="2" stroke-dasharray="6 6"/>
+
+  <g>
+    <circle cx="800" cy="448" r="22" fill="#1E88E5"/>
+    <text x="800" y="456" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="700" fill="#fff">1</text>
+    <text x="855" y="455" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#1F2937">Get conversations</text>
+  </g>
+
+  <g>
+    <circle cx="800" cy="500" r="22" fill="#1E88E5"/>
+    <text x="800" y="508" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="700" fill="#fff">2</text>
+    <text x="855" y="507" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#1F2937">List related recordings</text>
+  </g>
+
+  <g>
+    <circle cx="800" cy="552" r="22" fill="#1E88E5"/>
+    <text x="800" y="560" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="700" fill="#fff">3</text>
+    <text x="855" y="559" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#1F2937">HTTP 1 - Get file SAS</text>
+  </g>
+
+  <g>
+    <circle cx="800" cy="604" r="22" fill="#1E88E5"/>
+    <text x="800" y="612" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="700" fill="#fff">4</text>
+    <text x="855" y="611" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#1F2937">HTTP 2 - Download audio</text>
+  </g>
+
+  <g>
+    <circle cx="800" cy="656" r="22" fill="#1E88E5"/>
+    <text x="800" y="664" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="700" fill="#fff">5</text>
+    <text x="855" y="663" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#1F2937">Create blob (V2)</text>
+  </g>
+
+  <g>
+    <circle cx="800" cy="708" r="22" fill="#1E88E5"/>
+    <text x="800" y="716" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="700" fill="#fff">6</text>
+    <text x="855" y="715" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#1F2937">Create SAS URI by path</text>
+  </g>
+
+  <g>
+    <circle cx="800" cy="760" r="22" fill="#1E88E5"/>
+    <text x="800" y="768" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="700" fill="#fff">7</text>
+    <text x="855" y="767" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#1F2937">Update Dataverse</text>
+  </g>
+
+  <rect x="650" y="790" width="300" height="48" rx="10" fill="#E6F2FF" stroke="#1E88E5" stroke-width="2"/>
+  <text x="800" y="822" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700" fill="#1F2937">Child flow</text>
+
+  <path d="M590 620C544 620 512 620 470 620" stroke="#1E88E5" stroke-width="3"/>
+  <path d="M470 620L480 610M470 620L480 630" stroke="#1E88E5" stroke-width="3"/>
+
+  <path d="M990 390H1140" stroke="#1E88E5" stroke-width="3"/>
+  <path d="M1140 390L1130 380M1140 390L1130 400" stroke="#1E88E5" stroke-width="3"/>
+
+  <text x="1180" y="260" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="700" fill="#1F2937">AZURE / BLOB STORAGE</text>
+
+  <rect x="1195" y="332" width="220" height="110" rx="12" fill="#F8FBFF" stroke="#1E88E5" stroke-width="2"/>
+  <text x="1305" y="388" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" font-weight="600" fill="#1F2937">Storage account</text>
+  <text x="1305" y="418" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#4B5563">blob service</text>
+
+  <rect x="1185" y="470" width="240" height="200" rx="12" fill="#F8FBFF" stroke="#1E88E5" stroke-width="2"/>
+  <text x="1305" y="525" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="600" fill="#1F2937">Container</text>
+  <text x="1305" y="560" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#4B5563">year-wise folder structure</text>
+  <text x="1305" y="600" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#4B5563">2023 / conversation.mp3</text>
+  <text x="1305" y="630" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#4B5563">2024 / conversation.mp3</text>
+
+  <rect x="1185" y="700" width="240" height="96" rx="12" fill="#F8FBFF" stroke="#1E88E5" stroke-width="2" stroke-dasharray="8 8"/>
+  <text x="1305" y="748" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="600" fill="#1F2937">Lifecycle + access policy</text>
+
+  <path d="M120 930H1480" stroke="#3C7CFF" stroke-width="2" stroke-dasharray="10 12"/>
+  <text x="800" y="960" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#4B5563">The recording row is retained in Dataverse — only the audio file is removed.</text>
+
+  <path d="M260 780V840" stroke="#4B5563" stroke-width="2" stroke-dasharray="8 8"/>
+  <path d="M260 840H210V840" stroke="#4B5563" stroke-width="2"/>
+  <path d="M210 840L220 830M210 840L220 850" stroke="#4B5563" stroke-width="2"/>
+
+  <path d="M235 930V973" stroke="#A855F7" stroke-width="2" stroke-dasharray="8 8"/>
+</svg>
